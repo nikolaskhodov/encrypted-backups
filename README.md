@@ -52,11 +52,12 @@ my_local_backup/
 Streams `<source_dir>`, encrypts it into chunks in temporary storage, and uploads `passwd.txt.gpg` and all chunks to `s3://$BUCKET/$PREFIX/<remote_name>/` using parallel workers. All temporary chunks are automatically wiped upon completion:
 
 ```bash
-CHUNK_SIZE=1m \
+# Add -v or --verbose for detailed debug logs:
+CHUNK_SIZE=200m \
 AWS_PROFILE=scaleway \
 BUCKET=googledrive \
 S3_HOST=s3.fr-par.scw.cloud \
-./stream-backup.sh upload ~/Desktop/screenshots screenshots_backup
+./stream-backup.sh -v upload ~/UE/Dist dist
 ```
 
 ---
