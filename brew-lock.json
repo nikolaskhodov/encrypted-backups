@@ -1,0 +1,792 @@
+{
+  "formulae": [
+    {
+      "name": "s3cmd",
+      "full_name": "s3cmd",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [],
+      "versioned_formulae": [],
+      "desc": "Command-line tool for the Amazon S3 service",
+      "license": "GPL-2.0-or-later",
+      "homepage": "https://s3tools.org/s3cmd",
+      "versions": {
+        "stable": "2.4.0",
+        "head": "HEAD",
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://files.pythonhosted.org/packages/b3/9c/ad4cd51328bd7a058bfda6739bc061c63ee3531ad2fbc6e672518a1eed01/s3cmd-2.4.0.tar.gz",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "6b567521be1c151323f2059c8feec85ded96b6f184ff80535837fea33798b40b"
+        },
+        "head": {
+          "url": "https://github.com/s3tools/s3cmd.git",
+          "branch": "master",
+          "using": null
+        }
+      },
+      "patches": [],
+      "local_patch_checksums": {},
+      "revision": 1,
+      "version_scheme": 0,
+      "compatibility_version": null,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 3,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_tahoe": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/s3cmd/blobs/sha256:78fa12d0f20fe81efb0eb9233033b75983fc32d2a045710ed75604468991e25c",
+              "sha256": "78fa12d0f20fe81efb0eb9233033b75983fc32d2a045710ed75604468991e25c"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [],
+      "dependencies": [
+        "libmagic",
+        "python@3.15"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "no_linkage_dependencies": [
+        "libmagic"
+      ],
+      "uses_from_macos": [],
+      "uses_from_macos_bounds": [],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [],
+      "caveats": null,
+      "installed": [
+        {
+          "sbom": "/opt/homebrew/Cellar/s3cmd/2.4.0_1/sbom.spdx.json",
+          "version": "2.4.0_1",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1750867288,
+          "runtime_dependencies": [
+            {
+              "full_name": "libmagic",
+              "version": "5.46",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "5.46",
+              "declared_directly": true
+            },
+            {
+              "full_name": "mpdecimal",
+              "version": "4.0.1",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "4.0.1",
+              "declared_directly": false
+            },
+            {
+              "full_name": "ca-certificates",
+              "version": "2025-05-20",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "2025-05-20",
+              "declared_directly": false
+            },
+            {
+              "full_name": "openssl@3",
+              "version": "3.5.0",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "3.5.0",
+              "declared_directly": false
+            },
+            {
+              "full_name": "readline",
+              "version": "8.2.13",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "8.2.13",
+              "declared_directly": false
+            },
+            {
+              "full_name": "sqlite",
+              "version": "3.50.1",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "3.50.1",
+              "declared_directly": false
+            },
+            {
+              "full_name": "xz",
+              "version": "5.8.1",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "5.8.1",
+              "declared_directly": false
+            },
+            {
+              "full_name": "python@3.13",
+              "version": "3.13.5",
+              "revision": 0,
+              "bottle_rebuild": 1,
+              "pkg_version": "3.13.5",
+              "declared_directly": true
+            }
+          ],
+          "installed_on_request": true
+        }
+      ],
+      "linked_keg": "2.4.0_1",
+      "pinned": true,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "653f2843c48c0c73c81bb225d71246bc6b0f507d",
+      "ruby_source_path": "Formula/s/s3cmd.rb",
+      "ruby_source_checksum": {
+        "sha256": "5cd17c7f905f1a65cec8e5c063c77c00257f052aee4174289afbd96a2e3606a1"
+      }
+    },
+    {
+      "name": "pv",
+      "full_name": "pv",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [
+        "pipeviewer"
+      ],
+      "versioned_formulae": [],
+      "desc": "Monitor data's progress through a pipe",
+      "license": "Artistic-2.0",
+      "homepage": "https://www.ivarch.com/programs/pv.shtml",
+      "versions": {
+        "stable": "1.12.0",
+        "head": null,
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://www.ivarch.com/programs/sources/pv-1.12.0.tar.gz",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "31fdbdb449c7143cd2968567bef7599e9f031950e6158ee7bb76e40aebf6ffb8"
+        }
+      },
+      "patches": [],
+      "local_patch_checksums": {},
+      "revision": 0,
+      "version_scheme": 0,
+      "compatibility_version": null,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_tahoe": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/pv/blobs/sha256:cd91923ccdde058fb984dc9a25c12cf903ded4da91ac8b33e21c659ffb18c076",
+              "sha256": "cd91923ccdde058fb984dc9a25c12cf903ded4da91ac8b33e21c659ffb18c076"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [],
+      "dependencies": [
+        "gettext"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "no_linkage_dependencies": [],
+      "uses_from_macos": [
+        "ncurses"
+      ],
+      "uses_from_macos_bounds": [
+        {}
+      ],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [],
+      "caveats": null,
+      "installed": [
+        {
+          "sbom": "/opt/homebrew/Cellar/pv/1.12.0/sbom.spdx.json",
+          "version": "1.12.0",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1792606246,
+          "runtime_dependencies": [
+            {
+              "full_name": "json-c",
+              "version": "0.19",
+              "revision": 0,
+              "bottle_rebuild": 1,
+              "pkg_version": "0.19",
+              "declared_directly": false
+            },
+            {
+              "full_name": "libunistring",
+              "version": "1.5",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.5",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "gettext",
+              "version": "1.0",
+              "revision": 0,
+              "bottle_rebuild": 2,
+              "pkg_version": "1.0",
+              "declared_directly": true,
+              "compatibility_version": 1
+            }
+          ],
+          "installed_on_request": true
+        }
+      ],
+      "linked_keg": "1.12.0",
+      "pinned": true,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "653f2843c48c0c73c81bb225d71246bc6b0f507d",
+      "ruby_source_path": "Formula/p/pv.rb",
+      "ruby_source_checksum": {
+        "sha256": "d045e7dcbe7c6836eb553976667e47840516fe7afcb2b227ec038ce13c58cc2d"
+      }
+    },
+    {
+      "name": "openssl@3",
+      "full_name": "openssl@3",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [
+        "openssl@3.5"
+      ],
+      "versioned_formulae": [
+        "openssl@4",
+        "openssl@3.6",
+        "openssl@3.0"
+      ],
+      "desc": "Cryptography and SSL/TLS Toolkit",
+      "license": "Apache-2.0",
+      "homepage": "https://openssl-library.org",
+      "versions": {
+        "stable": "3.5.9",
+        "head": null,
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://github.com/openssl/openssl/releases/download/openssl-3.5.9/openssl-3.5.9.tar.gz",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a"
+        }
+      },
+      "patches": [],
+      "local_patch_checksums": {},
+      "revision": 0,
+      "version_scheme": 1,
+      "compatibility_version": 1,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_tahoe": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/openssl/3/blobs/sha256:e8d7a91a0599aca7c82b63ff708bde97b6c1535f6b74c951ac89e4e55d571872",
+              "sha256": "e8d7a91a0599aca7c82b63ff708bde97b6c1535f6b74c951ac89e4e55d571872"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": true,
+      "keg_only_reason": {
+        "reason": ":versioned_formula",
+        "explanation": ""
+      },
+      "options": [],
+      "build_dependencies": [],
+      "dependencies": [
+        "ca-certificates"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "no_linkage_dependencies": [
+        "ca-certificates"
+      ],
+      "uses_from_macos": [],
+      "uses_from_macos_bounds": [],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [],
+      "caveats": "To add additional certificates, place .pem files in\n  $HOMEBREW_PREFIX/etc/openssl@3/certs\n\nand run\n  $HOMEBREW_PREFIX/opt/openssl@3/bin/c_rehash\n",
+      "installed": [
+        {
+          "sbom": "/opt/homebrew/Cellar/openssl@3/3.6.2/sbom.spdx.json",
+          "version": "3.6.2",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1775699046,
+          "runtime_dependencies": [
+            {
+              "full_name": "ca-certificates",
+              "version": "2026-03-19",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "2026-03-19",
+              "declared_directly": true
+            }
+          ],
+          "installed_on_request": false
+        },
+        {
+          "sbom": "/opt/homebrew/Cellar/openssl@3/3.6.4/sbom.spdx.json",
+          "version": "3.6.4",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1789722771,
+          "runtime_dependencies": [
+            {
+              "full_name": "ca-certificates",
+              "version": "2026-08-13",
+              "revision": 0,
+              "bottle_rebuild": 1,
+              "pkg_version": "2026-08-13",
+              "declared_directly": true
+            }
+          ],
+          "installed_on_request": true
+        }
+      ],
+      "linked_keg": null,
+      "pinned": true,
+      "outdated": true,
+      "deprecated": false,
+      "deprecation_date": "2030-04-08",
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": {
+        "date": "2030-04-08",
+        "because": "unmaintained",
+        "replacement_formula": null,
+        "replacement_cask": null
+      },
+      "disabled": false,
+      "disable_date": "2031-04-08",
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": {
+        "date": "2031-04-08",
+        "because": "unmaintained",
+        "replacement_formula": null,
+        "replacement_cask": null
+      },
+      "post_install_steps": [
+        {
+          "source": {
+            "path": "{{etc}}/ca-certificates/cert.pem"
+          },
+          "target": {
+            "path": "{{pkgetc}}/cert.pem"
+          },
+          "force": true,
+          "type": "symlink"
+        }
+      ],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "653f2843c48c0c73c81bb225d71246bc6b0f507d",
+      "ruby_source_path": "Formula/o/openssl@3.rb",
+      "ruby_source_checksum": {
+        "sha256": "ff38ac43aa86a0484a12bace87feca515c745b3caf38a5b0738288b56fb86c97"
+      }
+    },
+    {
+      "name": "gnupg",
+      "full_name": "gnupg",
+      "tap": "homebrew/core",
+      "oldnames": [],
+      "aliases": [
+        "gnupg@2.5",
+        "gpg",
+        "gpg2"
+      ],
+      "versioned_formulae": [
+        "gnupg@1.4"
+      ],
+      "desc": "GNU Privacy Guard (OpenPGP)",
+      "license": "GPL-3.0-or-later",
+      "homepage": "https://gnupg.org/",
+      "versions": {
+        "stable": "2.5.24",
+        "head": null,
+        "bottle": true
+      },
+      "urls": {
+        "stable": {
+          "url": "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.5.24.tar.bz2",
+          "tag": null,
+          "revision": null,
+          "using": null,
+          "checksum": "bf149d01a2b9fcc0e4589b8ae8697d3d5c557ea48ed95a3fa55dd3b1187e6039"
+        }
+      },
+      "patches": [
+        {
+          "strip": "p1",
+          "url": "https://github.com/gpg/gnupg/commit/42386bcf8861f04c1bdec5cbb139a03da83d8ef9.patch?full_index=1",
+          "sha256": "93817449be3f93dcade3d79960e33e72959f54f95ff6108f22176bef28111f2b",
+          "resolves": [
+            {
+              "type": "defect",
+              "id": "https://dev.gnupg.org/T8469"
+            }
+          ]
+        },
+        {
+          "strip": "p1",
+          "url": "https://github.com/gpg/gnupg/commit/5523cec6913bcbd1a374d183899a6f298d2c0e32.patch?full_index=1",
+          "sha256": "0a0acd2f7f25723f3f84ec5c4ecf03b786d73ca61c48487d4d00c0559be89d66",
+          "resolves": [
+            {
+              "type": "defect",
+              "id": "https://dev.gnupg.org/T8469"
+            }
+          ]
+        }
+      ],
+      "local_patch_checksums": {},
+      "revision": 1,
+      "version_scheme": 0,
+      "compatibility_version": 1,
+      "autobump": true,
+      "no_autobump_message": null,
+      "skip_livecheck": false,
+      "bottle": {
+        "stable": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_tahoe": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/gnupg/blobs/sha256:16b53990074dfe23dbe2342a548e8b72a91a5697c522d1eef3410fe8be5c1e0a",
+              "sha256": "16b53990074dfe23dbe2342a548e8b72a91a5697c522d1eef3410fe8be5c1e0a"
+            }
+          }
+        }
+      },
+      "pour_bottle_only_if": null,
+      "keg_only": false,
+      "keg_only_reason": null,
+      "options": [],
+      "build_dependencies": [
+        "pkgconf"
+      ],
+      "dependencies": [
+        "gnutls",
+        "libassuan",
+        "libgcrypt",
+        "libgpg-error",
+        "libksba",
+        "libusb",
+        "npth",
+        "pinentry",
+        "readline",
+        "gettext"
+      ],
+      "test_dependencies": [],
+      "recommended_dependencies": [],
+      "optional_dependencies": [],
+      "no_linkage_dependencies": [],
+      "uses_from_macos": [
+        "bzip2",
+        "openldap",
+        "sqlite"
+      ],
+      "uses_from_macos_bounds": [
+        {},
+        {},
+        {}
+      ],
+      "requirements": [],
+      "conflicts_with": [],
+      "conflicts_with_reasons": [],
+      "link_overwrite": [],
+      "caveats": null,
+      "installed": [
+        {
+          "sbom": "/opt/homebrew/Cellar/gnupg/2.5.24_1/sbom.spdx.json",
+          "version": "2.5.24_1",
+          "used_options": [],
+          "built_as_bottle": true,
+          "poured_from_bottle": true,
+          "time": 1792606267,
+          "runtime_dependencies": [
+            {
+              "full_name": "ca-certificates",
+              "version": "2026-10-20",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "2026-10-20",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "gmp",
+              "version": "6.3.0",
+              "revision": 0,
+              "bottle_rebuild": 1,
+              "pkg_version": "6.3.0",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libunistring",
+              "version": "1.5",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.5",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "json-c",
+              "version": "0.19",
+              "revision": 0,
+              "bottle_rebuild": 1,
+              "pkg_version": "0.19",
+              "declared_directly": false
+            },
+            {
+              "full_name": "gettext",
+              "version": "1.0",
+              "revision": 0,
+              "bottle_rebuild": 2,
+              "pkg_version": "1.0",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libidn2",
+              "version": "2.3.8",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "2.3.8",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libtasn1",
+              "version": "4.21.0",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "4.21.0",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "nettle",
+              "version": "4.0",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "4.0",
+              "declared_directly": false,
+              "compatibility_version": 2
+            },
+            {
+              "full_name": "p11-kit",
+              "version": "0.26.5",
+              "revision": 0,
+              "bottle_rebuild": 1,
+              "pkg_version": "0.26.5",
+              "declared_directly": false,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "gnutls",
+              "version": "3.8.13",
+              "revision": 2,
+              "bottle_rebuild": 1,
+              "pkg_version": "3.8.13_2",
+              "declared_directly": true,
+              "compatibility_version": 2
+            },
+            {
+              "full_name": "libgpg-error",
+              "version": "1.61",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.61",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libassuan",
+              "version": "3.0.2",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "3.0.2",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libgcrypt",
+              "version": "1.12.4",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.12.4",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libksba",
+              "version": "1.8.1",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.8.1",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "libusb",
+              "version": "1.0.30",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.0.30",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "npth",
+              "version": "1.8",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.8",
+              "declared_directly": true
+            },
+            {
+              "full_name": "pinentry",
+              "version": "1.3.3",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "1.3.3",
+              "declared_directly": true,
+              "compatibility_version": 1
+            },
+            {
+              "full_name": "readline",
+              "version": "8.3.6",
+              "revision": 0,
+              "bottle_rebuild": 0,
+              "pkg_version": "8.3.6",
+              "declared_directly": true,
+              "compatibility_version": 1
+            }
+          ],
+          "installed_on_request": true
+        }
+      ],
+      "linked_keg": "2.5.24_1",
+      "pinned": true,
+      "outdated": false,
+      "deprecated": false,
+      "deprecation_date": null,
+      "deprecation_reason": null,
+      "deprecation_replacement_formula": null,
+      "deprecation_replacement_cask": null,
+      "deprecate_args": null,
+      "disabled": false,
+      "disable_date": null,
+      "disable_reason": null,
+      "disable_replacement_formula": null,
+      "disable_replacement_cask": null,
+      "disable_args": null,
+      "post_install_steps": [
+        {
+          "path": {
+            "base": "var",
+            "path": "run"
+          },
+          "type": "mkdir_p"
+        },
+        {
+          "name": "gpg-agent",
+          "type": "terminate_process"
+        }
+      ],
+      "post_install_defined": false,
+      "service": null,
+      "tap_git_head": "653f2843c48c0c73c81bb225d71246bc6b0f507d",
+      "ruby_source_path": "Formula/g/gnupg.rb",
+      "ruby_source_checksum": {
+        "sha256": "8594732bc1f0d95b42d68d66445de4c3853f1019937b7ba8fe8fc125e03f6532"
+      }
+    }
+  ],
+  "casks": []
+}
