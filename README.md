@@ -1,87 +1,65 @@
-# stream-backup.sh: Stream-Encrypted Backups
+# stream-backup.sh - Lean Restic Backup Wrapper
 
-A concise, single-file Bash shell script (~175 lines) with strict input validation, linear execution, and zero branching.
-
----
-
-## 3 Core Features
-
-1. **`backup <source_dir> <output_dir>`**: Stream archive, encrypt (AES-256-CBC), and split directly into a local folder.
-2. **`upload <source_dir> <remote_name>`**: Stream archive, encrypt, split, and upload directly to remote S3 storage in parallel with live progress.
-3. **`restore <backup_dir> <dest_dir>`**: Stream decrypt chunks on the fly and unpack directly into target directory.
+A lean Bash wrapper (~90 lines, 2 screens tall) around **`restic`** with zero external transport dependencies (no `aws` CLI, no `s3cmd`, no `tar`, no `split`, no RAM disk).
 
 ---
 
 ## Requirements
 
-Install standard CLI utilities:
-
 ```bash
 # macOS (Homebrew)
-brew install pv s3cmd
-# (Optionally awscli: brew install awscli)
-
-# Ubuntu / Debian
-apt-get install -y pv s3cmd
+brew install restic gnupg
 ```
 
 ---
 
-## Usage
-
-### 1. Create a Local Encrypted Backup
-
-Streams `<source_dir>` directly through `tar | pv | openssl enc | split` into encrypted chunks in `<output_dir>`:
+## Commands
 
 ```bash
+# Local backup
 ./stream-backup.sh backup ~/Desktop/screenshots ./my_local_backup
-```
 
-Produces:
-```text
-my_local_backup/
-├── chunk_aa
-├── chunk_ab
-└── passwd.txt.gpg
-```
-
----
-
-### 2. Stream, Encrypt & Upload Directly to S3
-
-Streams `<source_dir>`, encrypts it into chunks in temporary storage, and uploads `passwd.txt.gpg` and all chunks to `s3://$BUCKET/$PREFIX/<remote_name>/` using parallel workers. All temporary chunks are automatically wiped upon completion:
-
-```bash
-# Add -v or --verbose for detailed debug logs:
-CHUNK_SIZE=200m \
+# Remote backup directly to S3
 AWS_PROFILE=scaleway \
 BUCKET=googledrive \
 S3_HOST=s3.fr-par.scw.cloud \
-./stream-backup.sh -v upload ~/UE/Dist dist
-```
+./stream-backup.sh upload ~/UE/ ue-test
 
----
-
-### 3. Restore from a Local Backup Folder
-
-Streams chunks on the fly through `cat | pv | openssl enc -d | tar -xf -`:
-
-```bash
+# Restore from local repo or remote S3
 ./stream-backup.sh restore ./my_local_backup ./restored_screenshots
+# or from S3:
+AWS_PROFILE=scaleway BUCKET=googledrive S3_HOST=s3.fr-par.scw.cloud \
+./stream-backup.sh restore ue-test ./restored_ue
+
+# List snapshots
+./stream-backup.sh snapshots ./my_local_backup
+
+# Verify repository integrity
+./stream-backup.sh check ./my_local_backup
 ```
 
 ---
 
-## Environment Variables
+## Configuration (Environment Variables)
 
+### S3 & Remote Storage
 | Variable | Description | Default |
 | :--- | :--- | :--- |
-| `BUCKET` | Remote S3 bucket name (required for `upload`) | `""` |
-| `PREFIX` | Remote S3 prefix path (for `upload`) | `backups` |
-| `S3_HOST` | Custom S3 endpoint host (e.g. `s3.fr-par.scw.cloud`) | `""` (AWS default) |
-| `AWS_PROFILE` | AWS profile name for credentials | `""` |
-| `PARALLEL_JOBS` | Concurrent chunk upload workers | `4` |
-| `RAM_DISK_MB` | In-memory RAM disk size in MB (for `upload`) | Auto (`chunk_size * parallel_jobs * 1.05`) |
-| `CHUNK_SIZE` | Chunk split size | `2000m` |
-| `CIPHER` | OpenSSL cipher algorithm | `aes-256-cbc` |
-| `RECIPIENT` | GPG recipient email / key ID | `i@valt.me` |
+| `BUCKET` | S3 bucket name (required for `upload`) | `""` |
+| `PREFIX` | S3 prefix path | `backups` |
+| `S3_HOST` | S3 endpoint host (e.g. `s3.fr-par.scw.cloud`) | `s3.amazonaws.com` |
+| `AWS_PROFILE` | AWS profile in `~/.aws/credentials` | `""` |
+| `AWS_ACCESS_KEY_ID` | AWS / S3 access key ID (overrides profile) | Auto from profile |
+| `AWS_SECRET_ACCESS_KEY` | AWS / S3 secret access key (overrides profile) | Auto from profile |
+| `AWS_DEFAULT_REGION` | AWS / S3 region (auto-inferred from `S3_HOST`) | Auto |
+| `PARALLEL_JOBS` | Concurrent S3 connections (`-o s3.connections`) | `4` |
+| `PACK_SIZE_MB` | Target restic pack size in MiB (`4`–`128`) | `128` |
+
+### Encryption & Key Management
+| Variable | Description | Default |
+| :--- | :--- | :--- |
+| `RECIPIENT` | GPG recipient email / key ID for key encryption | `i@valt.me` |
+| `KEY_FILE` | Path to GPG-encrypted key file | `~/.config/stream-backup/key.gpg` |
+| `RESTIC_PASSWORD` | Direct repository password override | `""` |
+| `RESTIC_PASSWORD_FILE` | Path to plaintext password file override | `""` |
+| `RESTIC_PASSWORD_COMMAND` | Custom command returning repository password override | `""` |
